@@ -8,11 +8,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const docAuthSystem = await DocAuth.createDocAuthSystem({
-          assets: {
-            base: '/document-authoring/assets/',
-          },
-        });
+        const docAuthSystem = await DocAuth.createDocAuthSystem();
         const editorInstance = await docAuthSystem.createEditor(document.getElementById('editor'), {
           document: await docAuthSystem.createDocumentFromPlaintext('Hi there!'),
         });
